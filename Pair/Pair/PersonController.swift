@@ -30,6 +30,7 @@ class PersonController{
     
     func randomize(){
         persons.randomize()
+        savedToPersistStore()
     }
 }
 

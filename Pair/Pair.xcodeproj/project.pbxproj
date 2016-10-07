@@ -11,19 +11,19 @@
 		0F1FC0071DA7F5CA00B97925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1FC0051DA7F5CA00B97925 /* Main.storyboard */; };
 		0F1FC0091DA7F5CA00B97925 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F1FC0081DA7F5CA00B97925 /* Assets.xcassets */; };
 		0F1FC00C1DA7F5CA00B97925 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1FC00A1DA7F5CA00B97925 /* LaunchScreen.storyboard */; };
-		0F1FC0141DA7F6CF00B97925 /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC0131DA7F6CF00B97925 /* PairViewController.swift */; };
+		0F1FC0141DA7F6CF00B97925 /* PairTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC0131DA7F6CF00B97925 /* PairTableViewController.swift */; };
 		0F1FC0161DA7F73E00B97925 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC0151DA7F73E00B97925 /* Person.swift */; };
 		0F1FC0181DA7FA9D00B97925 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC0171DA7FA9D00B97925 /* PersonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F1FBFFE1DA7F5CA00B97925 /* Pair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pair.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F1FC0011DA7F5CA00B97925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0F1FC0011DA7F5CA00B97925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Pair/AppDelegate.swift; sourceTree = "<group>"; };
 		0F1FC0061DA7F5CA00B97925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0F1FC0081DA7F5CA00B97925 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F1FC0081DA7F5CA00B97925 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Pair/Assets.xcassets; sourceTree = "<group>"; };
 		0F1FC00B1DA7F5CA00B97925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0F1FC00D1DA7F5CA00B97925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F1FC0131DA7F6CF00B97925 /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
+		0F1FC00D1DA7F5CA00B97925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Pair/Info.plist; sourceTree = "<group>"; };
+		0F1FC0131DA7F6CF00B97925 /* PairTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairTableViewController.swift; sourceTree = "<group>"; };
 		0F1FC0151DA7F73E00B97925 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Person.swift; sourceTree = "<group>"; };
 		0F1FC0171DA7FA9D00B97925 /* PersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +44,7 @@
 			children = (
 				0F1FC0001DA7F5CA00B97925 /* Pair */,
 				0F1FBFFF1DA7F5CA00B97925 /* Products */,
+				0F60ED2F1DA848E700E3F994 /* Other */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +59,55 @@
 		0F1FC0001DA7F5CA00B97925 /* Pair */ = {
 			isa = PBXGroup;
 			children = (
+				0F60ED2B1DA848A200E3F994 /* Model */,
+				0F60ED2C1DA848A700E3F994 /* Model Controllers */,
+				0F60ED2D1DA848C400E3F994 /* View Controllers */,
+				0F60ED2E1DA848D700E3F994 /* View */,
+			);
+			path = Pair;
+			sourceTree = "<group>";
+		};
+		0F60ED2B1DA848A200E3F994 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				0F1FC0151DA7F73E00B97925 /* Person.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0F60ED2C1DA848A700E3F994 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				0F1FC0171DA7FA9D00B97925 /* PersonController.swift */,
-				0F1FC0131DA7F6CF00B97925 /* PairViewController.swift */,
-				0F1FC0011DA7F5CA00B97925 /* AppDelegate.swift */,
+			);
+			name = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		0F60ED2D1DA848C400E3F994 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F1FC0131DA7F6CF00B97925 /* PairTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0F60ED2E1DA848D700E3F994 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				0F1FC0051DA7F5CA00B97925 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0F60ED2F1DA848E700E3F994 /* Other */ = {
+			isa = PBXGroup;
+			children = (
 				0F1FC0081DA7F5CA00B97925 /* Assets.xcassets */,
+				0F1FC0011DA7F5CA00B97925 /* AppDelegate.swift */,
 				0F1FC00A1DA7F5CA00B97925 /* LaunchScreen.storyboard */,
 				0F1FC00D1DA7F5CA00B97925 /* Info.plist */,
 			);
-			path = Pair;
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +185,7 @@
 			files = (
 				0F1FC0181DA7FA9D00B97925 /* PersonController.swift in Sources */,
 				0F1FC0161DA7F73E00B97925 /* Person.swift in Sources */,
-				0F1FC0141DA7F6CF00B97925 /* PairViewController.swift in Sources */,
+				0F1FC0141DA7F6CF00B97925 /* PairTableViewController.swift in Sources */,
 				0F1FC0021DA7F5CA00B97925 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +207,7 @@
 				0F1FC00B1DA7F5CA00B97925 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = Pair;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
