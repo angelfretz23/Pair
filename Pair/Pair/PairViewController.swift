@@ -8,14 +8,17 @@
 
 import UIKit
 
-class PairViewController: UIViewController {
+class PairTableViewController: UITableViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     // MARK: - Actions
@@ -23,20 +26,45 @@ class PairViewController: UIViewController {
         PersonController.sharedController.randomize()
         tableView.reloadData()
     }
+    
+    @IBAction func addBarButtonPressed(sender: UIBarButtonItem){
+        let alertController = UIAlertController(title: "Enter Full Name", message: "Please Enter Full Name of Person", preferredStyle: .alert)
+        var nameTextField = UITextField()
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter Full Name"
+            nameTextField = textField
+        }
+        
+        let okAlertAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            guard let fullName = nameTextField.text else { return }
+            PersonController.sharedController.addPerson(fullname: fullName)
+            self.tableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addAction(okAlertAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
-extension PairViewController: UITableViewDelegate, UITableViewDataSource{
+// MARK: - TableViewDelagate/DataSource
+extension PairTableViewController{
     
     // MARK: - Sections
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return Int( ceil(Double(PersonController.sharedController.persons.count)/2) )
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Group \(section + 1)"
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // MARK: - Rows
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if PersonController.sharedController.persons.count % 2 != 0 && tableView.numberOfSections - 1 == section {
             return 1
         } else {
@@ -44,7 +72,7 @@ extension PairViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         let index = (indexPath.section * 2) + indexPath.row
         
@@ -54,3 +82,19 @@ extension PairViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
 }
+
+//// MARK: - Popover
+//extension PairViewController: UIPopoverPresentationControllerDelegate{
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "popoverSegue"{
+//            let addPersonVC = segue.destination as! AddPersonViewController
+//            addPersonVC.modalPresentationStyle = UIModalPresentationStyle.popover
+//            addPersonVC.popoverPresentationController?.delegate = self
+//        }
+//    }
+//    
+//    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+//        return UIModalPresentationStyle.none
+//    }
+//}

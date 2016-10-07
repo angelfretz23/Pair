@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0EE7061DA81CAD0079BD0E /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EE7051DA81CAD0079BD0E /* AddPersonViewController.swift */; };
 		0F1FC0021DA7F5CA00B97925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC0011DA7F5CA00B97925 /* AppDelegate.swift */; };
 		0F1FC0071DA7F5CA00B97925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1FC0051DA7F5CA00B97925 /* Main.storyboard */; };
 		0F1FC0091DA7F5CA00B97925 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F1FC0081DA7F5CA00B97925 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0EE7051DA81CAD0079BD0E /* AddPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		0F1FBFFE1DA7F5CA00B97925 /* Pair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F1FC0011DA7F5CA00B97925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F1FC0061DA7F5CA00B97925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				0F1FC0151DA7F73E00B97925 /* Person.swift */,
 				0F1FC0171DA7FA9D00B97925 /* PersonController.swift */,
+				0F0EE7051DA81CAD0079BD0E /* AddPersonViewController.swift */,
 				0F1FC0131DA7F6CF00B97925 /* PairViewController.swift */,
 				0F1FC0011DA7F5CA00B97925 /* AppDelegate.swift */,
 				0F1FC0051DA7F5CA00B97925 /* Main.storyboard */,
@@ -147,6 +150,7 @@
 				0F1FC0161DA7F73E00B97925 /* Person.swift in Sources */,
 				0F1FC0141DA7F6CF00B97925 /* PairViewController.swift in Sources */,
 				0F1FC0021DA7F5CA00B97925 /* AppDelegate.swift in Sources */,
+				0F0EE7061DA81CAD0079BD0E /* AddPersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +314,7 @@
 				0F1FC0121DA7F5CA00B97925 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
