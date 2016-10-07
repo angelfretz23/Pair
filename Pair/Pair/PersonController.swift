@@ -38,18 +38,21 @@ extension PersonController{
     func addPerson(fullname: String){
         let newPerson = Person(fullName: fullname)
         self.persons.append(newPerson)
+        savedToPersistStore()
     }
     
     func removePerson(person: Person){
         guard let index = persons.index(of: person) else { return }
         persons.remove(at: index)
+        savedToPersistStore()
     }
 }
 
 // MARK: - Pesist
 extension PersonController{
     func savedToPersistStore(){
-        UserDefaults.standard.set(persons.map{$0.dictionaryRepresentation}, forKey: keys.kPerson)
+        let dictionaryArray = persons.map{$0.dictionaryRepresentation}
+        UserDefaults.standard.set(dictionaryArray, forKey: keys.kPerson)
     }
     
     func loadFromPersistStore(){
