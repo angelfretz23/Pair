@@ -9,24 +9,48 @@
 import UIKit
 
 class PairViewController: UIViewController {
+    
+    // MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.delegate = self
+    }
+    
+    // MARK: - Actions
+    @IBAction func randomizeBarButtonPressed(sender: UIBarButtonItem){
+        PersonController.sharedController.randomize()
+        tableView.reloadData()
     }
 }
 
 extension PairViewController: UITableViewDelegate, UITableViewDataSource{
     
+    // MARK: - Sections
     func numberOfSections(in tableView: UITableView) -> Int {
-        <#code#>
+        return Int( ceil(Double(PersonController.sharedController.persons.count)/2) )
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Group \(section + 1)"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        if PersonController.sharedController.persons.count % 2 != 0 && tableView.numberOfSections - 1 == section {
+            return 1
+        } else {
+            return 2
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
+        let index = (indexPath.section * 2) + indexPath.row
+        
+        let person = PersonController.sharedController.persons[index]
+        cell.textLabel?.text = "\(person.fullName)"
+        
+        return cell
     }
 }

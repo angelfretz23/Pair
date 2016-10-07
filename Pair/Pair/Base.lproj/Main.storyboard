@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +34,9 @@
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyF-2s-8FD">
                                 <items>
-                                    <barButtonItem title="Item" id="Qie-gw-poS"/>
+                                    <barButtonItem title="Randomize" id="Qie-gw-poS"/>
+                                    <barButtonItem width="240" style="plain" systemItem="fixedSpace" id="lBa-bv-b2D"/>
+                                    <barButtonItem systemItem="add" id="VnY-5O-3Iy"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -52,6 +55,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OsD-dX-IWU">
+            <objects>
+                <viewController id="Q0K-ka-qxL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TLU-2k-kGc"/>
+                        <viewControllerLayoutGuide type="bottom" id="RJ0-Si-oGt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BLt-3P-XK5">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="80"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHK-2L-SEO">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Khn-XK-eqn">
+                                <state key="normal" title="Add"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zHK-2L-SEO" firstAttribute="centerX" secondItem="Khn-XK-eqn" secondAttribute="centerX" id="7rs-qs-H3o"/>
+                            <constraint firstItem="Khn-XK-eqn" firstAttribute="leading" secondItem="BLt-3P-XK5" secondAttribute="leadingMargin" constant="39" id="Ora-Ky-gIV"/>
+                            <constraint firstItem="zHK-2L-SEO" firstAttribute="leading" secondItem="BLt-3P-XK5" secondAttribute="leadingMargin" constant="-9" id="T25-Or-jhY"/>
+                            <constraint firstItem="zHK-2L-SEO" firstAttribute="centerX" secondItem="BLt-3P-XK5" secondAttribute="centerX" id="X2E-Ua-opZ"/>
+                            <constraint firstItem="RJ0-Si-oGt" firstAttribute="top" secondItem="Khn-XK-eqn" secondAttribute="bottom" constant="8" symbolic="YES" id="kgS-Fb-h5S"/>
+                            <constraint firstItem="zHK-2L-SEO" firstAttribute="top" secondItem="TLU-2k-kGc" secondAttribute="bottom" constant="8" symbolic="YES" id="l7T-hK-apG"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="220" height="80"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="THz-Fg-yR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="45"/>
         </scene>
     </scenes>
 </document>

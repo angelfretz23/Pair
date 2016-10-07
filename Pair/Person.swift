@@ -8,35 +8,39 @@
 
 import Foundation
 
-class Person{
-    let firstName: String
-    let lastName: String
+class Person: Equatable{
+    let fullName: String
+    var groupName: String?
     let identifier: UUID // Just in case there is a person with the same name
     
     struct keys{
-        static let kFirstName = "firstName"
-        static let kLastName = "lastName"
+        static let kFullName = "fullName"
+        static let kGroupName = "groupName"
         static let kIdentifier = "identifier"
     }
     
-    init(firstName: String, lastName: String, identifier: UUID = UUID()){
-        self.firstName = firstName
-        self.lastName = lastName
+    init(fullName: String, groupName: String? =  nil ,identifier: UUID = UUID()){
+        self.fullName = fullName
+        self.groupName = groupName
         self.identifier = identifier
     }
     
     init?(dictionary:[String: Any]){
-        guard let firstName = dictionary[keys.kFirstName] as? String,
-        let lastName = dictionary[keys.kLastName] as? String,
-        let identifier = dictionary[keys.kIdentifier] as? UUID
+        guard let fullName = dictionary[keys.kFullName] as? String,
+            let groupName = dictionary[keys.kGroupName] as? String,
+            let identifier = dictionary[keys.kIdentifier] as? UUID
             else { return nil }
         
-        self.firstName = firstName
-        self.lastName = lastName
+        self.fullName = fullName
+        self.groupName = groupName
         self.identifier = identifier
     }
     
     var dictionaryRepresentation: [String: Any]{
-        return [keys.kFirstName: self.firstName, keys.kLastName: self.lastName, keys.kLastName: self.identifier]
+        return [keys.kFullName: self.fullName, keys.kGroupName: self.groupName, keys.kIdentifier: self.identifier]
     }
+}
+
+func ==(left: Person, right: Person) -> Bool{
+    return left.identifier == right.identifier
 }

@@ -13,6 +13,7 @@
 		0F1FC00C1DA7F5CA00B97925 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1FC00A1DA7F5CA00B97925 /* LaunchScreen.storyboard */; };
 		0F1FC0141DA7F6CF00B97925 /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC0131DA7F6CF00B97925 /* PairViewController.swift */; };
 		0F1FC0161DA7F73E00B97925 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC0151DA7F73E00B97925 /* Person.swift */; };
+		0F1FC0181DA7FA9D00B97925 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC0171DA7FA9D00B97925 /* PersonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0F1FC00D1DA7F5CA00B97925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F1FC0131DA7F6CF00B97925 /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		0F1FC0151DA7F73E00B97925 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Person.swift; sourceTree = "<group>"; };
+		0F1FC0171DA7FA9D00B97925 /* PersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				0F1FC0151DA7F73E00B97925 /* Person.swift */,
+				0F1FC0171DA7FA9D00B97925 /* PersonController.swift */,
 				0F1FC0131DA7F6CF00B97925 /* PairViewController.swift */,
 				0F1FC0011DA7F5CA00B97925 /* AppDelegate.swift */,
 				0F1FC0051DA7F5CA00B97925 /* Main.storyboard */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1FC0181DA7FA9D00B97925 /* PersonController.swift in Sources */,
 				0F1FC0161DA7F73E00B97925 /* Person.swift in Sources */,
 				0F1FC0141DA7F6CF00B97925 /* PairViewController.swift in Sources */,
 				0F1FC0021DA7F5CA00B97925 /* AppDelegate.swift in Sources */,
